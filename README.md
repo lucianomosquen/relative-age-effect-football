@@ -1,4 +1,4 @@
-```markdown
+```
 # Relative Age Effect in Professional Football
 
 ![Birth month distribution](figures/birth_month_distribution.png)
