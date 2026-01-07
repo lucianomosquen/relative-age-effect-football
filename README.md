@@ -68,16 +68,18 @@ El mes de nacimiento tiene un impacto estadísticamente significativo en la prob
 
 ## 📂 Estructura del repositorio
 
+```
 data/
-raw/ # Datos originales (no incluidos por tamaño)
-processed/ # Datos procesados (no incluidos por tamaño)
+  raw/         # Datos originales (no incluidos por tamaño)
+  processed/   # Datos procesados (no incluidos por tamaño)
 
 notebooks/
-01_exploracion_y_limpieza.ipynb
-02_analisis_estadistico.ipynb
+  01_exploracion_y_limpieza.ipynb
+  02_analisis_estadistico.ipynb
 
 figures/
-birth_month_distribution.png
+  birth_month_distribution.png
+```
 
 ---
 
@@ -89,4 +91,25 @@ birth_month_distribution.png
 
 ```bash
 pip install -r requirements.txt
+```
+
+4. Ejecutar los notebooks en orden:
+   - `01_exploracion_y_limpieza.ipynb`
+   - `02_analisis_estadistico.ipynb`
+
+---
+
+## 🔮 Trabajo futuro
+
+- Analizar el efecto por **país o región**
+- Comparar por **posición de juego**
+- Estudiar cohortes por década de nacimiento
+
+---
+
+## 👤 Autor
+
+**Luciano Mosquén**  
+Senior Data Analyst  
+Python · SQL · Power BI
 
