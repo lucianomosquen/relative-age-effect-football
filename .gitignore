@@ -1,0 +1,9 @@
+# Data files
+data/raw/
+data/processed/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
