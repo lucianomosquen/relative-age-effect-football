@@ -1,4 +1,3 @@
-```markdown
 # Relative Age Effect in Professional Football
 
 ![Birth month distribution](figures/birth_month_distribution.png)
@@ -66,7 +65,6 @@ Only players with valid birth dates were included in the analysis.
 Birth month has a statistically significant impact on the likelihood of reaching professional football, confirming the presence of a strong Relative Age Effect.
 
 ---
-```
 
 ## 📂 Repository Structure
 
