@@ -1,111 +1,92 @@
-# Relative Age Effect in Professional Football
+# Efecto de la Edad Relativa en el Fútbol Profesional
 
-![Birth month distribution](figures/birth_month_distribution.png)
+![Distribución de meses de nacimiento](figures/birth_month_distribution.png)
 
-## 📌 Project Overview
+## 📌 Descripción del proyecto
 
-This project analyzes the **Relative Age Effect (RAE)** in professional football, examining whether players born earlier in the calendar year are overrepresented among those who reach the professional level.
+Este proyecto analiza el **Efecto de la Edad Relativa (Relative Age Effect, RAE)** en el fútbol profesional, explorando si los jugadores nacidos a comienzos del año calendario están sobrerrepresentados entre quienes logran llegar al nivel profesional.
 
-Using a large real-world dataset of professional football players, the analysis reveals a **clear and statistically significant bias** favoring players born in the first months of the year—particularly January—over those born at the end of the year.
+A partir de un dataset amplio y real de futbolistas profesionales, el análisis muestra un **sesgo claro y estadísticamente significativo** a favor de los jugadores nacidos en los primeros meses del año —especialmente enero— en comparación con aquellos nacidos hacia fin de año.
 
 ---
 
-## ❓ What is the Relative Age Effect?
+## ❓ ¿Qué es el Efecto de la Edad Relativa?
 
-In many youth football systems, age categories are defined by calendar year. As a result, players born earlier in the year are relatively older within the same age group.
+En muchos sistemas de fútbol juvenil, las categorías se definen por año calendario. Como consecuencia, los jugadores nacidos a principios de año son relativamente mayores dentro de la misma categoría etaria.
 
-This relative age advantage often translates into:
-- Physical and developmental advantages
-- Higher likelihood of early selection
-- Greater access to training and competitive opportunities
+Esta ventaja relativa suele traducirse en:
+- Ventajas físicas y madurativas
+- Mayor probabilidad de selección temprana
+- Más acceso a entrenamientos y competencia de calidad
 
-Over time, these early advantages may accumulate and influence which players ultimately reach professional football.
+Con el tiempo, estas ventajas iniciales pueden acumularse e influir en qué jugadores terminan alcanzando el fútbol profesional.
 
 ---
 
 ## 📊 Dataset
 
-- **Source**: Public real-world professional football player data (scraped from Transfermarkt)
-- **Scope**: Global — professional players across multiple leagues and countries
-- **Key variable**: `date_of_birth`
+- **Fuente**: Datos públicos de jugadores profesionales (scrapeados de Transfermarkt)
+- **Alcance**: Global — jugadores profesionales de múltiples ligas y países
+- **Variable clave**: `date_of_birth`
 
-> ⚠️ Due to file size constraints, the raw and processed datasets are not included in this repository.  
-> The analysis is fully reproducible once the data is downloaded locally.
+> ⚠️ Debido al tamaño de los archivos, los datasets crudos y procesados no se incluyen en el repositorio.  
+> El análisis es completamente reproducible descargando los datos y ejecutando los notebooks.
 
-Only players with valid birth dates were included in the analysis.
+Solo se incluyeron jugadores con fecha de nacimiento válida.
 
 ---
 
-## 🛠️ Methodology
+## 🛠️ Metodología
 
-1. **Data preparation**
-   - Parsed birth dates
-   - Removed missing or invalid values
-   - Created derived variables:
+1. **Preparación de datos**
+   - Conversión de fechas de nacimiento
+   - Eliminación de valores faltantes o inválidos
+   - Creación de variables derivadas:
      - `birth_month`
      - `birth_quarter`
 
-2. **Exploratory analysis**
-   - Distribution of players by month of birth
-   - Visual inspection of over- and under-representation
+2. **Análisis exploratorio**
+   - Distribución de jugadores por mes de nacimiento
+   - Identificación visual de sobrerrepresentación y subrepresentación
 
-3. **Statistical testing**
-   - Chi-square goodness-of-fit test
-   - Null hypothesis: birth months are uniformly distributed
-
----
-
-## 📈 Key Findings
-
-- Players born in **Q1 (January–March)** are strongly overrepresented.
-- Players born in **Q4 (October–December)** are significantly underrepresented.
-- The chi-square test **rejects the null hypothesis of uniform distribution** (p < 0.05).
-
-**Conclusion:**  
-Birth month has a statistically significant impact on the likelihood of reaching professional football, confirming the presence of a strong Relative Age Effect.
+3. **Test estadístico**
+   - Prueba de bondad de ajuste Chi-cuadrado
+   - Hipótesis nula: distribución uniforme de meses de nacimiento
 
 ---
 
-## 📂 Repository Structure
+## 📈 Resultados principales
 
-```
+- Los jugadores nacidos en el **primer trimestre (Q1: enero–marzo)** están claramente sobrerrepresentados.
+- Los nacidos en el **último trimestre (Q4: octubre–diciembre)** están subrepresentados.
+- La prueba Chi-cuadrado **rechaza la hipótesis de distribución uniforme** (p < 0.05).
+
+**Conclusión:**  
+El mes de nacimiento tiene un impacto estadísticamente significativo en la probabilidad de llegar al fútbol profesional, confirmando la presencia de un fuerte Efecto de la Edad Relativa.
+
+---
+
+## 📂 Estructura del repositorio
+
 data/
-  raw/         # Raw dataset (not included due to size)
-  processed/   # Cleaned dataset (not included due to size)
+raw/ # Datos originales (no incluidos por tamaño)
+processed/ # Datos procesados (no incluidos por tamaño)
 
 notebooks/
-  01_exploracion_y_limpieza.ipynb
-  02_analisis_estadistico.ipynb
+01_exploracion_y_limpieza.ipynb
+02_analisis_estadistico.ipynb
 
 figures/
-  birth_month_distribution.png
-```
+birth_month_distribution.png
 
 ---
 
-## 🚀 How to Reproduce
+## 🚀 Cómo reproducir el análisis
+
+1. Descargar el dataset desde su fuente pública
+2. Colocar el archivo CSV en `data/raw/`
+3. Instalar dependencias:
 
 ```bash
 pip install -r requirements.txt
-```
 
-Run the notebooks in order:
-1. `01_exploracion_y_limpieza.ipynb`
-2. `02_analisis_estadistico.ipynb`
-
----
-
-## 🔮 Future Work
-
-- Analyze the effect by **country or region**
-- Compare **player positions**
-- Study cohort effects across different decades
-
----
-
-## 👤 Author
-
-**Luciano Mosquén**  
-Senior Data Analyst  
-Python · SQL · Power BI
-```
